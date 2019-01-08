@@ -11,12 +11,17 @@ import { FormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
-import { LayoutModule } from '@angular/cdk/layout';
+import { SidenavService } from './sidenav/sidenav.service';
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,
@@ -24,13 +29,12 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatToolbarModule,
     MatSidenavModule,
     BrowserAnimationsModule,
-    LayoutModule,
     MatButtonModule,
     MatIconModule,
     MatListModule,
     MatCardModule
   ],
-  providers: [],
+  providers: [SidenavService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
