@@ -6,7 +6,8 @@ import {
   MatButtonModule,
   MatIconModule,
   MatListModule,
-  MatCardModule } from '@angular/material';
+  MatCardModule,
+  MatDividerModule} from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
@@ -32,7 +33,8 @@ import { SidenavService } from './sidenav/sidenav.service';
     MatButtonModule,
     MatIconModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatDividerModule
   ],
   providers: [SidenavService],
   bootstrap: [AppComponent]

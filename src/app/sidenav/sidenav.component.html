@@ -1,6 +1,12 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #sidenav mode="side" class="side-sidenav">
-    <span><mat-card>Chat Rooms</mat-card> <i class="fas fa-plus"></i></span>
+      <mat-list>
+          <mat-list-item>Chat Rooms
+              <button mat-button><i class="fas fa-plus"></i></button>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+
+      </mat-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <app-header></app-header>
