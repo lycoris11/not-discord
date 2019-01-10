@@ -5,10 +5,18 @@
               <button mat-button><i class="fas fa-plus"></i></button>
           </mat-list-item>
           <mat-divider></mat-divider>
-
       </mat-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <app-header></app-header>
+    <div id="messageContainer">
+        <div id="messageHolder" class="thumbTop">
+            <app-message-list></app-message-list>
+        </div>
+    </div>
+    <div class="message-create">
+        <app-message-create></app-message-create>
+    </div>
+
   </mat-sidenav-content>
 </mat-sidenav-container>
