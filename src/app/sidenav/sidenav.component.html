@@ -11,11 +11,11 @@
     <app-header></app-header>
     <div id="messageContainer">
         <div id="messageHolder" class="thumbTop">
-            <app-message-list></app-message-list>
+            <app-message-list [posts]="storedMessages"></app-message-list>
         </div>
     </div>
     <div class="message-create">
-        <app-message-create></app-message-create>
+        <app-message-create (messageCreated)="onPostAdded($event)"></app-message-create>
     </div>
 
   </mat-sidenav-content>

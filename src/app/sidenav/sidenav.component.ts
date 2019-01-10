@@ -11,11 +11,17 @@ import { MatSidenav } from '@angular/material';
 export class SidenavComponent implements OnInit {
   title = 'Not Discord';
 
+  storedMessages = [];
+
   @ViewChild('sidenav') public sidenav: MatSidenav;
 
   constructor(private sidenavService: SidenavService) {	}
 
   ngOnInit(): void {
     this.sidenavService.setSidenav(this.sidenav);
+  }
+
+  onPostAdded(post) {
+    this.storedMessages.push(post);
   }
 }

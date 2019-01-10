@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -8,11 +8,17 @@ import { NgForm } from '@angular/forms';
 })
 
 export class MessageCreateComponent implements OnInit {
+  enteredContent = '';
+  @Output() messageCreated = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() { }
 
   onAddMessage() {
-
+    const post = {
+      content: this.enteredContent
+    };
+    this.messageCreated.emit(post);
   }
 }
