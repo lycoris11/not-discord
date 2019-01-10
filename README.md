@@ -1,6 +1,6 @@
 # NotDiscord
 
-This web app is supposed to function like Discord except that its not.
+This web app is supposed to function like Discord except that its not. This is Harmony.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.2.
 
