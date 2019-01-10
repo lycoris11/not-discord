@@ -1,0 +1,24 @@
+<mat-card class="bottom">
+    <!-- <form (submit)="onAddMessage(postMessage)" #postMessage="ngForm"> -->
+        <mat-form-field class="form-field" appearance="fill">
+            <input
+              matInput
+              type="text"
+              name="message"
+              ngModel
+              required
+              color="primary"
+              minlength="6"
+              placeholder = "Message"
+              #message
+              [(ngModel)]="enteredContent">
+              <mat-error *ngIf="message.invalid">Please enter a message.</mat-error>
+        </mat-form-field>
+
+          <button
+            mat-raised-button
+            color="accent"
+            type="submit"
+            (click)="onAddMessage()">Send</button>
+    <!-- </form> -->
+  </mat-card>
