@@ -1,13 +1,14 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Message } from '../message.model';
 import { MessagesService } from '../messages.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-message-list',
   templateUrl: './message-list.component.html',
   styleUrls: ['./message-list.component.css']
 })
-export class MessageListComponent implements OnInit {
+export class MessageListComponent implements OnInit, OnDestroy {
 
   /* posts = [
     {content: 'This is the first content'},
@@ -17,8 +18,19 @@ export class MessageListComponent implements OnInit {
 
   constructor(public messagesService: MessagesService) { }
 
-  @Input() messages: Message[] = [];
+  messages: Message[] = [];
+  private messageSub: Subscription;
+
   ngOnInit() {
+    this.messages = this.messagesService.getMesseges();
+    this.messageSub = this.messagesService.getMessageUpdateListener()
+      .subscribe((messages: Message[]) => {
+        this.messages = messages;
+      });
+  }
+
+  ngOnDestroy() {
+    this.messageSub.unsubscribe();
   }
 
 }
