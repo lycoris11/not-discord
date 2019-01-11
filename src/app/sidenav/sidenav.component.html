@@ -1,7 +1,7 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #sidenav mode="side" class="side-sidenav">
       <mat-list>
-          <mat-list-item>Chat Rooms
+          <mat-list-item>This sidepanel doesn't do even do anything i trolled you.
               <button mat-button><i class="fas fa-plus"></i></button>
           </mat-list-item>
           <mat-divider></mat-divider>
@@ -11,11 +11,11 @@
     <app-header></app-header>
     <div id="messageContainer">
         <div id="messageHolder" class="thumbTop">
-            <app-message-list [posts]="storedMessages"></app-message-list>
+            <app-message-list [messages]="storedMessages"></app-message-list>
         </div>
     </div>
     <div class="message-create">
-        <app-message-create (messageCreated)="onPostAdded($event)"></app-message-create>
+        <app-message-create (messageCreated)="onMessageAdded($event)"></app-message-create>
     </div>
 
   </mat-sidenav-content>

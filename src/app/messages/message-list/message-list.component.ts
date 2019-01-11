@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Message } from '../message.model';
+import { MessagesService } from '../messages.service';
 
 @Component({
   selector: 'app-message-list',
@@ -13,10 +15,9 @@ export class MessageListComponent implements OnInit {
     {content: 'This is the third content'}
   ]; */
 
-  constructor() { }
+  constructor(public messagesService: MessagesService) { }
 
-  @Input() posts = [];
-
+  @Input() messages: Message[] = [];
   ngOnInit() {
   }
 

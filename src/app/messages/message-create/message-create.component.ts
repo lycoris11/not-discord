@@ -1,5 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Message } from '../message.model';
+import { MessagesService } from '../messages.service';
 
 @Component({
   selector: 'app-message-create',
@@ -9,16 +11,20 @@ import { NgForm } from '@angular/forms';
 
 export class MessageCreateComponent implements OnInit {
   enteredContent = '';
-  @Output() messageCreated = new EventEmitter();
+  @Output() messageCreated = new EventEmitter<Message>();
 
-  constructor() { }
+  constructor(public messagesService: MessagesService) { }
 
   ngOnInit() { }
 
-  onAddMessage() {
-    const post = {
-      content: this.enteredContent
+  onAddMessage(form: NgForm) {
+    if (form.invalid) {
+      return;
+    }
+
+    const message: Message = {
+      content: form.value.message
     };
-    this.messageCreated.emit(post);
+    this.messageCreated.emit(message);
   }
 }

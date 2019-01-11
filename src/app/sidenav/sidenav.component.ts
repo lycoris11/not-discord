@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { SidenavService } from './sidenav.service';
 import { MatSidenav } from '@angular/material';
+import { Message } from '../messages/message.model';
 
 @Component({
   selector: 'app-sidenav',
@@ -11,7 +12,7 @@ import { MatSidenav } from '@angular/material';
 export class SidenavComponent implements OnInit {
   title = 'Not Discord';
 
-  storedMessages = [];
+  storedMessages: Message[] = [];
 
   @ViewChild('sidenav') public sidenav: MatSidenav;
 
@@ -21,7 +22,7 @@ export class SidenavComponent implements OnInit {
     this.sidenavService.setSidenav(this.sidenav);
   }
 
-  onPostAdded(post) {
-    this.storedMessages.push(post);
+  onMessageAdded(message) {
+    this.storedMessages.push(message);
   }
 }

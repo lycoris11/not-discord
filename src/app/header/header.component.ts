@@ -9,7 +9,7 @@ import { SidenavComponent } from '../sidenav/sidenav.component';
 })
 
 export class HeaderComponent {
-  title = 'Not Discord';
+  title = 'Harmony';
 
   constructor(private sidenav: SidenavService) {}
   toggleSidenav() {

@@ -20,7 +20,7 @@ import { MessageCreateComponent } from './messages/message-create/message-create
 import { MessageListComponent } from './messages/message-list/message-list.component';
 
 import { SidenavService } from './sidenav/sidenav.service';
-
+import { MessagesService } from './messages/messages.service';
 
 
 @NgModule({
@@ -45,7 +45,9 @@ import { SidenavService } from './sidenav/sidenav.service';
     MatInputModule,
     MatCardModule,
   ],
-  providers: [SidenavService],
+  providers: [
+    SidenavService,
+    MessagesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
