@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 import {
   MatToolbarModule,
   MatSidenavModule,
@@ -44,6 +45,7 @@ import { MessagesService } from './messages/messages.service';
     MatDividerModule,
     MatInputModule,
     MatCardModule,
+    HttpClientModule
   ],
   providers: [
     SidenavService,

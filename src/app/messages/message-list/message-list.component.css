@@ -1,0 +1,14 @@
+mat-action-list {
+  position: fixed;
+  right:0;
+}
+
+mat-list-item {
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.message-content {
+  width:80%;
+}

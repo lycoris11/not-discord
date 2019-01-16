@@ -22,11 +22,15 @@ export class MessageListComponent implements OnInit, OnDestroy {
   private messageSub: Subscription;
 
   ngOnInit() {
-    this.messages = this.messagesService.getMesseges();
+    this.messagesService.getMesseges();
     this.messageSub = this.messagesService.getMessageUpdateListener()
       .subscribe((messages: Message[]) => {
         this.messages = messages;
       });
+  }
+
+  onDelete(messageId: string) {
+    this.messagesService.deleteMessage(messageId);
   }
 
   ngOnDestroy() {

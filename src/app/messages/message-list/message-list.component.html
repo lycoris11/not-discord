@@ -1,6 +1,11 @@
 <mat-list *ngFor="let message of messages">
-  <mat-list-item >
-    {{message.content}}
+  <mat-list-item>
+    <div class = "message-content">
+      {{message.content}}
+    </div>
+      <mat-action-list>
+        <button color="warn" (click)="onDelete(message.id)" mat-button>Delete</button>
+      </mat-action-list>
   </mat-list-item>
   <mat-divider></mat-divider>
 </mat-list>

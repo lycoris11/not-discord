@@ -20,6 +20,7 @@ export class MessageCreateComponent implements OnInit {
     if (form.invalid) {
       return;
     }
-    this.messagesService.addPost(form.value.message);
+    this.messagesService.addMessage(form.value.message);
+    form.resetForm();
   }
 }
